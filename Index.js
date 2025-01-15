@@ -85,3 +85,96 @@ for(let i = str.length - 1; i >=0; i--){
 return result;
 }
 console.log(reverseString2("Hello MY name is Tanishka Gupta"));
+
+
+//#5 Write a JavaScript function that takes an array of numbers and 
+//returns a new array with only the even numbers. 
+//method 1
+
+const findEvenNum = () => {
+let arr = [8,24,45,49,6]
+return arr.filter(num => num % 2 === 0)
+}
+console.log(findEvenNum())
+
+//method 2
+const findEvenNum1 = (arr) => {
+  let result = [];
+  for(let i =0; i < arr.length; i++) {
+    if(arr[i] % 2 == 0){
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+console.log(findEvenNum1([1,2,3,4,5,24]));
+
+//#6 Write a JavaScript function that takes an array of numbers and 
+// returns a new array with only the odd numbers. 
+//method 1
+
+const findOddNum = () => {
+  let arr = [8,24,45,49,6]
+  return arr.filter(num => num % 2 !== 0)
+  }
+  console.log(findOddNum())
+  
+  //method 2
+  const findOddNum1 = (arr) => {
+    let result = [];
+    for(let i =0; i < arr.length; i++) {
+      if(arr[i] % 2 !== 0){
+        result.push(arr[i]);
+      }
+    }
+    return result;
+  }
+  console.log(findOddNum1([1,2,3,4,5,24]));
+
+
+//#7 Write a JavaScript program to calculate the factorial of a given number. 
+//method 1
+const findFactorial = (num) => {
+  if(num === 0 || num === 1){
+    return 1;
+  }
+  else {
+    return num*findFactorial(num-1)
+  }
+}
+
+console.log(findFactorial(2));
+
+//method 2
+const findFactorial1 = (num) => {
+  if(num === 0 || num === 1){
+    return 1;
+  }
+    let factorial = 1;
+    for(let i = 1; i <= num; i++){
+     factorial *= i;
+    }
+    return factorial;
+}
+console.log(findFactorial1(10));
+//A factorial number is the product of all positive integers, which are equal to or less than the given number. = 5 = (1*2*3*4*5) = 120
+
+//#8. Write a JavaScript function to check if a given number is prime. 
+//method 1
+const checkPrimeNum = (num) => {
+  if(num < 2) return false;
+
+  for(let i = 2; i < num; i++) {
+    if (num % i === 0 ) return false;
+}
+return true;
+}
+console.log(checkPrimeNum(9))
+
+//#9 Write a JavaScript program to find the largest element in a nested array. 
+const findMaxNum = () => {
+  const arr = [[12,45,75], [54,45,2],[23,54,75,2]];
+  const max = Math.max(...[].concat(...arr))
+  return max;
+}
+console.log(findMaxNum());
